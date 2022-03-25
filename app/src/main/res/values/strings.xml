@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">EKL</string>
+    <string name="action_settings">Settings</string>
+    <string name="login_impossible">Couldn\'t login</string>
+    <string name="add_list">Add list</string>
+    <string name="create_list">Create list</string>
+    <string name="receiving_lists">Lookings for lists...</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+    <string name="no_lists">No lists so far</string>
+    <string name="receiving_lists_failed">Receiving lists failed</string>
+    <string name="list_name_failed">Receiving Listname failed</string>
+    <string name="name">name</string>
+    <string name="create">create</string>
+    <string name="cancel">Cancel</string>
+    <string name="receiving_list_name">Receiving list name...</string>
+    <string name="creating_failed">Creation failed</string>
+    <string name="title_all_lists">All lists</string>
+    <string name="default_title_list">List</string>
+    <string name="default_title_list_settings">Settings</string>
+    <string name="change_list">Change list</string>
+    <string name="clear_list">Clear list</string>
+    <string name="settings_list">List settings</string>
+    <string name="add_group">Add group</string>
+    <string name="list_token">List token:</string>
+    <string name="no_token_exists">No token exists</string>
+    <string name="create_token">Create token</string>
+    <string name="delete_token">Delete token</string>
+    <string name="groups_deletable">Groups deletable?</string>
+    <string name="token_creation_failed">Token creation failed</string>
+    <string name="token_to_clipboard">Copied token to clipboard</string>
+    <string name="delete_token_failed">Deleting token failed</string>
+    <string name="token">token</string>
+    <string name="add">add</string>
+    <string name="adding_failed">Adding failed</string>
+    <string name="default_group">group...</string>
+    <string name="default_item">item...</string>
+    <string name="loading_data">Loading data...</string>
+    <string name="add_item">Add item</string>
+    <string name="group_creation_failed">Group creation failed</string>
+    <string name="item_creation_failed">Item creation failed</string>
+    <string name="delete">delete</string>
+    <string name="save">save</string>
+    <string name="edit_item">Edit item</string>
+</resources>

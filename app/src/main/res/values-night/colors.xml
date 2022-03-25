@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimary">#303030</color>
+
+    <color name="background">#000000</color>
+    <color name="colorYes">#275C29</color>
+    <color name="colorNo">#880101</color>
+    <color name="colorNeutral">#006573</color>
+
+    <color name="notCancelledGroup">#BDBDBD</color>
+    <color name="cancelledGroup">#8E8E8E</color>
+
+    <color name="notCancelledItem">#FFFFFF</color>
+    <color name="cancelledItem">#E5E5E5</color>
+
+    <color name="textColorSec">#000000</color>
+</resources>

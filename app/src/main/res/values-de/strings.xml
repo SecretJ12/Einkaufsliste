@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EKL</string>
+    <string name="login_impossible">Einloggen fehlgeschlagen</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="add_list">Liste hinzufügen</string>
+    <string name="create_list">Erstelle Liste</string>
+    <string name="receiving_lists">Rufe Listen ab...</string>
+    <string name="no_lists">Bisher noch keine Listen</string>
+    <string name="receiving_lists_failed">Listen abrufen fehlgeschlagen</string>
+    <string name="list_name_failed">Listenname abrufen fehlgeschlagen</string>
+    <string name="name">Name</string>
+    <string name="create">Erstellen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="receiving_list_name">Listenname wird abgerufen...</string>
+    <string name="creating_failed">Listenerstellung fehlgeschlagen</string>
+    <string name="title_all_lists">Alle Listen</string>
+    <string name="default_title_list">Liste</string>
+    <string name="default_title_list_settings">Einstellungen</string>
+    <string name="change_list">Liste wechseln</string>
+    <string name="clear_list">Liste leeren</string>
+    <string name="settings_list">Listeneinstellungen</string>
+    <string name="add_group">Gruppe hinzufügen</string>
+    <string name="list_token">Listentoken:</string>
+    <string name="no_token_exists">Kein Token existiert</string>
+    <string name="create_token">Token erstellen</string>
+    <string name="delete_token">Token löschen</string>
+    <string name="groups_deletable">Gruppen löschbar?</string>
+    <string name="token_creation_failed">Tokenerstellung fehlgeschlagen</string>
+    <string name="token_to_clipboard">Token in Zwischenablage kopiert</string>
+    <string name="delete_token_failed">Token löschen fehlgeschlagen</string>
+    <string name="token">Token</string>
+    <string name="add">hinzufügen</string>
+    <string name="adding_failed">Hinzufügen fehlgeschlagen</string>
+    <string name="default_group">Gruppe...</string>
+    <string name="default_item">Artikel...</string>
+    <string name="loading_data">Lade daten...</string>
+    <string name="add_item">Artikel hinzufügen</string>
+    <string name="group_creation_failed">Gruppe hinzufügen fehlgeschlagen</string>
+    <string name="item_creation_failed">Artikel hinzufügen fehlgeschlagen</string>
+    <string name="delete">löschen</string>
+    <string name="save">speichern</string>
+    <string name="edit_item">Artikel bearbeiten</string>
+</resources>

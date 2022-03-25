@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "496471826057",
+    "firebase_url": "https://einkaufsliste-351a5-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "einkaufsliste-351a5",
+    "storage_bucket": "einkaufsliste-351a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496471826057:android:b8b4665583c586ecc43058",
+        "android_client_info": {
+          "package_name": "de.secretj12.ekl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496471826057-6c53ri186hgujuaus9f4scd0njftam71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0XTbIhJQowahz-V4r-ApohCElbSgd8E4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496471826057-6c53ri186hgujuaus9f4scd0njftam71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

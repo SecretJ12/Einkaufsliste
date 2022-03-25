@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragment_list">
+    <fragment
+        android:id="@+id/fragment_all_lists"
+        android:name="de.secretj12.ekl.fragment_all_lists"
+        android:label="fragment_all_lists">
+        <action
+            android:id="@+id/action_fragment_all_lists_to_fragment_list"
+            app:destination="@id/fragment_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_list_settings"
+        android:name="de.secretj12.ekl.fragment_list_settings"
+        android:label="fragment_list_settings">
+        <action
+            android:id="@+id/action_fragment_list_settings_to_fragment_list"
+            app:destination="@id/fragment_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_list"
+        android:name="de.secretj12.ekl.fragment_list"
+        android:label="fragment_list">
+        <action
+            android:id="@+id/action_fragment_list_to_fragment_list_settings"
+            app:destination="@id/fragment_list_settings" />
+        <action
+            android:id="@+id/action_fragment_list_to_fragment_all_lists"
+            app:destination="@id/fragment_all_lists" />
+    </fragment>
+</navigation>
