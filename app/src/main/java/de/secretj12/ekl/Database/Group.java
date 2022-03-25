@@ -300,6 +300,10 @@ public class Group extends ListItem {
     }
 
     void clearItems() {
-        items.forEach(item -> item.delete());
+        items.forEach(Item::delete);
+    }
+
+    void deleteCompleted() {
+        items.stream().filter(Item::isCancelled).forEach(Item::delete);
     }
 }

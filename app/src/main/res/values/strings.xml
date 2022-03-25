@@ -21,6 +21,7 @@
     <string name="clear_list">Clear list</string>
     <string name="settings_list">List settings</string>
     <string name="add_group">Add group</string>
+    <string name="delete_cancelled">Delete cancelled</string>
     <string name="list_token">List token:</string>
     <string name="no_token_exists">No token exists</string>
     <string name="create_token">Create token</string>
@@ -41,4 +42,5 @@
     <string name="delete">delete</string>
     <string name="save">save</string>
     <string name="edit_item">Edit item</string>
+    <string name="confirm_delete_cancelled">Do you really want to delete all  cancelled items?</string>
 </resources>

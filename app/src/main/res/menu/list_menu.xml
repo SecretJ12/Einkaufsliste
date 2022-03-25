@@ -8,6 +8,11 @@
         android:title="@string/add_group"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/delete_completed"
+        android:icon="@drawable/delete_cancelled"
+        android:title="@string/delete_cancelled"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/settings_list"
         android:title="@string/settings_list" />
     <item

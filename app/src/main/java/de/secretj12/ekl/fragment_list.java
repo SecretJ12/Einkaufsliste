@@ -51,6 +51,9 @@ public class fragment_list extends Fragment {
                 case R.id.add_group:
                     addGroup();
                     return true;
+                case R.id.delete_completed:
+                    deleteCompleted();
+                    return true;
                 case R.id.settings_list:
                     Navigation.findNavController(getView())
                             .navigate(R.id.action_fragment_list_to_fragment_list_settings);
@@ -76,20 +79,38 @@ public class fragment_list extends Fragment {
         View dialogview = LayoutInflater.from(getContext()).inflate(R.layout.dialog_name_input, null);
         EditText input = dialogview.findViewById(R.id.input);
         input.setHint(getString(R.string.name));
-        AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+        new AlertDialog.Builder(getContext())
                 .setTitle(getString(R.string.add_group))
                 .setView(dialogview)
                 .setPositiveButton(getString(R.string.add), (dialogInterface, i) -> {
                     liste.addGroup(input.getText().toString(), new Receiver<Group>() {
                         @Override
                         public void onFailure() {
-
+                            // TODO show error message
                         }
                     });
                 })
                 .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     dialogInterface.dismiss();
                 })
+                .show();
+    }
+
+    private void deleteCompleted() {
+        new AlertDialog.Builder(getContext())
+                .setTitle(R.string.delete_cancelled)
+                .setMessage(R.string.confirm_delete_cancelled)
+                .setPositiveButton(R.string.delete, (dialogInterface, i) -> {
+                    liste.deleteCompleted(new Receiver() {
+                        @Override
+                        public void onFailure() {
+                            // TODO show error message
+                        }
+                    });
+                })
+                .setNegativeButton(R.string.cancel, ((dialogInterface, i) ->
+                        dialogInterface.dismiss())
+                )
                 .show();
     }
 

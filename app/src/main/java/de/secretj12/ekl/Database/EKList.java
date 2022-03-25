@@ -25,7 +25,6 @@ public class EKList {
     private final ListenerManager listenerManager;
     private final int listenerListID;
     private final DocumentReference listRef;
-    private boolean isSettingsListenerSet;
 
     private String name;
     private String token;
@@ -39,7 +38,6 @@ public class EKList {
         listenerManager = ListenerManager.getInstance();
         listenerListID = (int) (Math.random() * 100000);
         listRef = ref;
-        isSettingsListenerSet = false;
         groups = new ArrayList<>();
         fullList = new ArrayList<>();
 
@@ -79,7 +77,6 @@ public class EKList {
                         gSnap.getString("name"),
                         gSnap.getLong("weight")))
                 .collect(Collectors.toList());
-
 
         List<Group> newList = new ArrayList<>();
         newGroups.forEach(group -> {
@@ -124,18 +121,17 @@ public class EKList {
 
     public synchronized void setListSettingsListener(ListSettingsListener listener, int listenerFragmentID) {
         if (!settingsListenerSet) {
-            settingsListenerSet = true;
             listenerManager.registerListener(listenerListID, listenerFragmentID, new Receiver<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot data) {
                     updateListSettings(data);
-                    isSettingsListenerSet = true;
+                    settingsListenerSet = true;
                 }
             }, listRef);
         }
 
         listSettingsListeners.add(listener);
-        if (isSettingsListenerSet) {
+        if (settingsListenerSet) {
             listener.onNameUpdate(name);
             listener.onTokenUpdate(token);
             listener.onKeepGroups(keepGroups);
@@ -246,7 +242,6 @@ public class EKList {
                             addGroupHelper(name, receiver);
                         }
                     });
-            return;
         } else
             addGroupHelper(name, receiver);
     }
@@ -260,15 +255,37 @@ public class EKList {
         long weight = calculateNewWeight();
         map.put("weight", weight);
         groupRef.set(map)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (!task.isSuccessful()) {
-                            receiver.onFailure();
-                            return;
-                        }
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        receiver.onFailure();
                     }
                 });
+    }
+
+    public void deleteCompleted(Receiver receiver) {
+        if (!changeListenerSet) {
+            listRef.collection("groups")
+                    .orderBy("weight")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (!task.isSuccessful()) {
+                                receiver.onFailure();
+                                return;
+                            }
+
+                            updateListOrder(task.getResult());
+                            deleteOnCompletedHelper(receiver);
+                        }
+                    });
+        } else
+            deleteOnCompletedHelper(receiver);
+    }
+
+    public void deleteOnCompletedHelper(Receiver receiver) {
+        groups.forEach(Group::deleteCompleted);
+        receiver.onSuccess(null);
     }
 
     private long calculateNewWeight() {
@@ -307,7 +324,7 @@ public class EKList {
     }
 
     public void clearList() {
-        if (!isSettingsListenerSet) {
+        if (!settingsListenerSet) {
             listRef.get()
                     .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override

@@ -41,4 +41,6 @@
     <string name="delete">löschen</string>
     <string name="save">speichern</string>
     <string name="edit_item">Artikel bearbeiten</string>
+    <string name="delete_cancelled">Lösche erledigte</string>
+    <string name="confirm_delete_cancelled">Möchtest du wirklich alle erledigten Artikel löschen?</string>
 </resources>
